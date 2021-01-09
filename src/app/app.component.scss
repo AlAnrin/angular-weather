@@ -1,5 +1,6 @@
 img {
   height: calc(100vh);
+  width: -webkit-fill-available;
 }
 .button-arrow {
   position: absolute;
