@@ -1,3 +1,29 @@
 img {
   height: calc(100vh);
 }
+.button-arrow {
+  position: absolute;
+  z-index: 999;
+  top: 50%;
+  color: gray;
+}
+.button-arrow:hover:not(:disabled) {
+  color: black;
+  background: darkgray;
+  border-radius: 30px;
+}
+.more-data-button {
+  color: midnightblue !important;
+  top: 15%;
+  right: 20px;
+}
+.left-button {
+  left: 20px;
+}
+.right-button {
+  right: 20px;
+}
+.tab {
+  display:inline-block;
+  margin-left: 10px;
+}

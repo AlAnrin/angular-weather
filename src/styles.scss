@@ -2,8 +2,13 @@
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 html, body {
   overflow: hidden !important;
+}
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 .carousel-indicators li {
   background-color: #000 !important;

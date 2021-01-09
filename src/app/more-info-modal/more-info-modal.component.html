@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col"></th>
+    <th scope="col"></th>
+    <th scope="col">&#8451;</th>
+    <th scope="col">%</th>
+    <th scope="col">мм рт.ст.</th>
+    <th scope="col">Ветер</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let hour of list">
+      <td>{{hour.dt_txt.split(' ')[1].slice(0, 5)}}</td>
+      <img [alt]="hour.weather[0].description" [src]="iconUrl + hour.weather[0].icon +'.png'"/>
+      <td>{{round(hour.main.temp)}}</td>
+      <td>{{hour.main.humidity}}</td>
+      <td>{{round(hour.main.grnd_level * 7.5006) / 10}}</td>
+      <td>{{round(hour.wind.speed)}}м/с ({{this.degWind[round(hour.wind.deg / 45)]}})</td>
+    <!--  <hr class="dotted">-->
+  </tr>
+  </tbody>
+</table>

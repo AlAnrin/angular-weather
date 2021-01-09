@@ -28,10 +28,12 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              { "glob": "mdi.svg", "input": "./node_modules/@mdi/angular-material", "output": "./assets" }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "@mdi/font/css/materialdesignicons.css"
             ],
             "scripts": []
           },
@@ -123,6 +125,10 @@
               "devServerTarget": "weather-angular:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
     }
