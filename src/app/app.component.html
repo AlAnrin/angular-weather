@@ -1,0 +1,21 @@
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" (navChange)="onNavChange($event.nextId)" class="nav-tabs">
+  <li *ngFor="let city of cities" [ngbNavItem]="city.code">
+    <a ngbNavLink>{{city.name}}</a>
+    <ng-template ngbNavContent>
+        <ngb-carousel [wrap]="false" [pauseOnHover]="true">
+          <ng-template *ngFor="let day of weather" ngbSlide>
+            <div class="picsum-img-wrapper" *ngFor="let state of day.weather">
+              <img [src]="getImage(state.main)" alt="{{state.description}}">
+            </div>
+            <div class="carousel-caption">
+              <h3>{{cutDate(day.dt_txt)}}</h3>
+              <p>Температура: {{roundTemp(day.main.temp)}}</p>
+              <p>Ощущается: {{roundTemp(day.main.feels_like)}}</p>
+            </div>
+          </ng-template>
+        </ngb-carousel>
+    </ng-template>
+  </li>
+</ul>
+
+<div [ngbNavOutlet]="nav" class="mt-2"></div>
