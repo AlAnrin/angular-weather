@@ -10,8 +10,10 @@ html, body {
   outline: none !important;
   box-shadow: none !important;
 }
-.carousel-indicators li {
-  background-color: #000 !important;
+.carousel-caption {
+  left: 25%;
+  right: 25%;
+  color: #3e0b4f
 }
 @media screen and (max-height: 800px) {
   .carousel-indicators {
@@ -19,7 +21,6 @@ html, body {
   }
   .carousel-caption {
     bottom: 150px;
-    color: #000;
   }
 }
 @media screen and (max-height: 600px) and (max-width: 550px) {
@@ -28,7 +29,6 @@ html, body {
   }
   .carousel-caption {
     bottom: 150px;
-    color: #000;
   }
 }
 @media screen and (max-height: 600px) and (max-width: 450px) {
@@ -37,7 +37,6 @@ html, body {
   }
   .carousel-caption {
     bottom: 170px;
-    color: #000;
   }
 }
 @media screen and (max-height: 600px) and (max-width: 350px) {
@@ -46,7 +45,6 @@ html, body {
   }
   .carousel-caption {
     bottom: 200px;
-    color: #000;
   }
 }
 

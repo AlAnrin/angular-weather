@@ -1,20 +1,40 @@
-img {
-  height: calc(100vh);
+.card-day {
   width: -webkit-fill-available;
+  height: 100vh;
+  background-repeat: repeat;
+}
+.button-more {
+  position: absolute;
+  z-index: 999;
+  top: 15%;
+  left: 45%;
+  right: 45%;
+  color: #2b1b44;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+}
+.button-more:hover:not(:disabled) {
+  color: #0c122d;
+  background: rgba(255, 255, 255, 0.7);
 }
 .button-arrow {
   position: absolute;
   z-index: 999;
-  top: 50%;
-  color: gray;
+  top: 15%;
+  height: calc(99vh - 15%);
+  color: #2b1b44;
+  background: rgba(255, 255, 255, 0.3);
+  //border-radius: 30px;
+}
+.button-arrow:disabled {
+  background: transparent;
 }
 .button-arrow:hover:not(:disabled) {
-  color: black;
-  background: darkgray;
-  border-radius: 30px;
+  color: #0c122d;
+  background: rgba(255, 255, 255, 0.6);
 }
 .more-data-button {
-  color: midnightblue !important;
+  color: #151531 !important;
   top: 15%;
   right: 20px;
 }

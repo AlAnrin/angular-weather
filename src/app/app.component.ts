@@ -133,14 +133,18 @@ export class AppComponent {
 
   getImage(main: string): string {
     switch (main) {
-      case 'Clouds':
-      case 'Snow':
-      case 'Rain':
-      case 'Mist':
       case 'Clear':
       case 'Sun':
-        return `assets/${main}.jpg`;
+        return `url(assets/${main}.jpg)`;
+      case 'Clouds':
+      case 'Mist':
+      case 'Rain':
+        return `url(assets/${main.toLowerCase()}1.jpg)`;
+      case 'Snow':
+      case 'Thunderstorm':
+        return `url(assets/${main.toLowerCase()}.jpg)`;
+      default:
+        return 'url(assets/default1.png)';
     }
-    return 'assets/default.png';
   }
 }

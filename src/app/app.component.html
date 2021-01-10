@@ -3,12 +3,17 @@
     <a ngbNavLink>{{city.name}}</a>
     <ng-template ngbNavContent>
       <div *ngFor="let day of weather">
-        <div class="card-day" *ngIf="day.dt == activeDay.dt">
-          <img [src]="getImage(day.weather.main)" alt="{{day.weather.description}}">
+        <div class="card-day" *ngIf="day.dt == activeDay.dt"
+             [style.background-image]="getImage(day.weather.main)"
+             ngbTooltip="{{day.weather.description}}">
           <div class="carousel-caption">
-            <h3>{{cutDate(day.dt_txt)}}</h3>
-            <p>Температура: {{roundTemp(day.min)}}&#8451; <span class="tab"></span> {{floatTem(day.max)}}&#8451;</p>
-            <p>Ощущается: {{roundTemp(day.feelMin)}}&#8451; <span class="tab"></span> {{floatTem(day.feelMax)}}&#8451;</p>
+            <ngb-toast [autohide]="false">
+              <header>
+                <h3>{{cutDate(day.dt_txt)}}</h3>
+              </header>
+              <p>Температура: {{roundTemp(day.min)}}&#8451; <span class="tab"></span> {{floatTem(day.max)}}&#8451;</p>
+              <p>Ощущается: {{roundTemp(day.feelMin)}}&#8451; <span class="tab"></span> {{floatTem(day.feelMax)}}&#8451;</p>
+            </ngb-toast>
           </div>
         </div>
       </div>
@@ -17,8 +22,8 @@
 </ul>
 <div>
   <button type="button"
-          (click)="showDetail()"
-          class="btn btn-default more-data-button button-arrow" aria-label="left">
+          (click)="showDetail()" ngbTooltip="Показать почасовой прогноз"
+          class="btn btn-default more-data-button button-more" aria-label="details">
     <i class="bi bi-card-list"></i>
   </button>
   <button type="button" [disabled]="indexActiveDay === 0"
