@@ -11,8 +11,8 @@ html, body {
   box-shadow: none !important;
 }
 .carousel-caption {
-  left: 25%;
-  right: 25%;
+  left: calc(47vw - 175px);
+  right: calc(50vw - 175px);
   color: #3e0b4f
 }
 @media screen and (max-height: 800px) {
