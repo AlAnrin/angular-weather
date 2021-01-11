@@ -6,35 +6,33 @@
         <div class="card-day" *ngIf="day.dt == activeDay.dt"
              [style.background-image]="getImage(day.weather.main)"
              ngbTooltip="{{day.weather.description}}">
-          <div class="carousel-caption">
-            <ngb-toast [autohide]="false">
-              <header>
-                <h3>{{cutDate(day.dt_txt)}}</h3>
-              </header>
-              <p>Температура: {{roundTemp(day.min)}}&#8451; <span class="tab"></span> {{floatTem(day.max)}}&#8451;</p>
-              <p>Ощущается: {{roundTemp(day.feelMin)}}&#8451; <span class="tab"></span> {{floatTem(day.feelMax)}}&#8451;</p>
-            </ngb-toast>
-          </div>
+          <ngb-toast class="toast-style-center" [autohide]="false">
+            <header>
+              <h3>{{cutDate(day.dt_txt)}}</h3>
+            </header>
+            <p>Температура: {{roundTemp(day.min)}}&#8451; <span class="tab"></span> {{floatTem(day.max)}}&#8451;</p>
+            <p>Ощущается: {{roundTemp(day.feelMin)}}&#8451; <span class="tab"></span> {{floatTem(day.feelMax)}}&#8451;</p>
+          </ngb-toast>
         </div>
+      </div>
+      <div>
+        <button type="button"
+                (click)="showDetail()" ngbTooltip="Показать почасовой прогноз"
+                class="btn btn-default more-data-button button-more" aria-label="details">
+          <i class="bi bi-card-list"></i>
+        </button>
+        <button type="button" [disabled]="indexActiveDay === 0"
+                (click)="lastDay()"
+                class="btn btn-default left-button button-arrow" aria-label="left">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <button type="button" [disabled]="indexActiveDay === 4"
+                (click)="nextDay()"
+                class="btn btn-default right-button button-arrow" aria-label="right">
+          <span class="bi bi-24px bi-chevron-right"></span>
+        </button>
       </div>
     </ng-template>
   </li>
 </ul>
-<div>
-  <button type="button"
-          (click)="showDetail()" ngbTooltip="Показать почасовой прогноз"
-          class="btn btn-default more-data-button button-more" aria-label="details">
-    <i class="bi bi-card-list"></i>
-  </button>
-  <button type="button" [disabled]="indexActiveDay === 0"
-          (click)="lastDay()"
-          class="btn btn-default left-button button-arrow" aria-label="left">
-    <i class="bi bi-chevron-left"></i>
-  </button>
-  <button type="button" [disabled]="indexActiveDay === 4"
-          (click)="nextDay()"
-          class="btn btn-default right-button button-arrow" aria-label="right">
-    <span class="bi bi-24px bi-chevron-right"></span>
-  </button>
-</div>
 <div [ngbNavOutlet]="nav" class="mt-2"></div>

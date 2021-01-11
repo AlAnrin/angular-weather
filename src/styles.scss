@@ -15,35 +15,12 @@ html, body {
   right: calc(50vw - 175px);
   color: #3e0b4f
 }
-@media screen and (max-height: 800px) {
-  .carousel-caption {
-    bottom: 25vh;
-  }
+.toast-style-center {
+  position: relative;
+  top: 35%;
+  bottom: 35%;
+  margin: auto;
 }
-@media screen and (max-height: 600px) and (max-width: 550px) {
-  .carousel-caption {
-    bottom: 22vh;
-  }
-}
-@media screen and (max-height: 600px) and (max-width: 450px) {
-  .carousel-caption {
-    bottom: 18vh;
-  }
-  .button-more {
-    top: 20% !important;
-  }
-}
-@media screen and (max-height: 600px) and (max-width: 350px) {
-  .carousel-caption {
-    bottom: 15vh;
-  }
-  .button-more {
-    top: 20% !important;
-  }
-}
-@media screen and (max-height: 600px) and (max-width: 350px) and (orientation: landscape) {
-  .carousel-caption {
-    top: 20%;
-  }
-}
-
+//@media screen and (orientation: portrait) {
+//  .toast-style-center
+//}
