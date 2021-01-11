@@ -16,35 +16,34 @@ html, body {
   color: #3e0b4f
 }
 @media screen and (max-height: 800px) {
-  .carousel-indicators {
-    bottom: 100px !important;
-  }
   .carousel-caption {
-    bottom: 150px;
+    bottom: 25vh;
   }
 }
 @media screen and (max-height: 600px) and (max-width: 550px) {
-  .carousel-indicators {
-    bottom: 100px !important;
-  }
   .carousel-caption {
-    bottom: 150px;
+    bottom: 22vh;
   }
 }
 @media screen and (max-height: 600px) and (max-width: 450px) {
-  .carousel-indicators {
-    bottom: 120px !important;
-  }
   .carousel-caption {
-    bottom: 170px;
+    bottom: 18vh;
+  }
+  .button-more {
+    top: 20% !important;
   }
 }
 @media screen and (max-height: 600px) and (max-width: 350px) {
-  .carousel-indicators {
-    bottom: 150px !important;
-  }
   .carousel-caption {
-    bottom: 200px;
+    bottom: 15vh;
+  }
+  .button-more {
+    top: 20% !important;
+  }
+}
+@media screen and (max-height: 600px) and (max-width: 350px) and (orientation: landscape) {
+  .carousel-caption {
+    top: 20%;
   }
 }
 

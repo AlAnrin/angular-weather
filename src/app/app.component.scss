@@ -19,7 +19,7 @@
 }
 .button-arrow {
   position: absolute;
-  z-index: 999;
+  //z-index: 999;
   top: 15%;
   height: calc(99vh - 15%);
   color: #2b1b44;
@@ -32,11 +32,6 @@
 .button-arrow:hover:not(:disabled) {
   color: #0c122d;
   background: rgba(255, 255, 255, 0.6);
-}
-.more-data-button {
-  color: #151531 !important;
-  top: 15%;
-  right: 20px;
 }
 .left-button {
   left: 20px;
